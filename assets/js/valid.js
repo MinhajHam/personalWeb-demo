@@ -11,7 +11,7 @@ function containsNumbers(str) {
 
 form.addEventListener("submit", (e) => {
   let message = [];
-  if (formName.value === "" || formName.value == null) {
+  if (Array.from(formName.value)[0] === ' ' || formName.value == null) {
     message.push("value");
     alert("Name is required");
   }
@@ -21,12 +21,17 @@ form.addEventListener("submit", (e) => {
     alert("Name shouldn't contain numbers");
   }
 
-  if (subject.value === "" || subject.value == null) {
+  if (Array.from(email.value)[0] === ' ' || email.value == null) {
+    message.push("value");
+    alert("Email is required");
+  }
+
+  if (Array.from(subject.value)[0] === ' ' || subject.value == null) {
     message.push("value");
     alert("Subject is required");
   }
 
-  if (formMessage.value === "" || formMessage.value == null) {
+  if (Array.from(formMessage.value)[0] === ' ' || formMessage.value == null) {
     message.push("value");
     alert("Message is required");
   }
@@ -52,3 +57,6 @@ form.addEventListener("submit", (e) => {
     });
   }
 });
+
+
+
